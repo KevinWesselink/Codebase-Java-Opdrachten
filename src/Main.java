@@ -30,7 +30,7 @@ public class Main {
             computerInput[i] = random;
         }
 
-//        Arrays.sort(computerInput);
+        Arrays.sort(computerInput);
         System.out.println(Arrays.toString(computerInput));
     }
 }
