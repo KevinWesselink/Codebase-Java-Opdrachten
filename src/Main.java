@@ -28,7 +28,6 @@ public class Main {
         // Computer inputs 6 different figures between 1 and 42 in an array
         for (int i = 0; i < 6; i++){
             int random = ThreadLocalRandom.current().nextInt(1, 42);
-            System.out.println(random);
             computerInput.add(random);
             System.out.println(computerInput);
         }
