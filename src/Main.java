@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -13,7 +12,17 @@ public class Main {
             System.out.print("Geef een getal tussen de 1 en 42. ");
             int input = scanner.nextInt();
 
-            if (input >= 1 && input <= 42) {
+            boolean found = false;
+            for(int inp: userInput) {
+                if (inp == input) {
+                    found = true;
+                    break;
+                }
+            }
+
+            System.out.println(found);
+
+            if (input >= 1 && input <= 42 && !found) {
                 userInput[i] = input;
                 System.out.println(Arrays.toString(userInput));
             } else {
@@ -27,7 +36,20 @@ public class Main {
 
         for (int i = 0; i < 6; i++){
             int random = ThreadLocalRandom.current().nextInt(1, 42);
-            computerInput[i] = random;
+
+            boolean found = false;
+            for(int inp: computerInput) {
+                if (inp == random) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                computerInput[i] = random;
+            } else {
+                i--;
+            }
         }
 
         Arrays.sort(computerInput);
