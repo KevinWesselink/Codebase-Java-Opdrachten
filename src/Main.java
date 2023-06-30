@@ -8,10 +8,17 @@ public class Main {
         int[] userInput = new int[6];
         int[] computerInput = new int[6];
         int validation = 0;
+        int input;
 
         for (int i = 0; i < 6; i++) {
             System.out.print("Geef een getal tussen de 1 en 42. ");
-            int input = scanner.nextInt();
+            try {
+                input = Integer.parseInt(scanner.next());
+            } catch (Exception e) {
+                System.out.println("Invoer moet een getal zijn.");
+                i--;
+                continue;
+            }
 
             boolean found = false;
             for(int inp: userInput) {
@@ -22,13 +29,12 @@ public class Main {
             }
 
 //            System.out.println(found);
-
-            if (input >= 1 && input <= 42 && !found) {
-                userInput[i] = input;
-            } else {
-                i--;
-                System.out.println("Het getal moet tussen de 1 en 42 zijn. ");
-            }
+                if (input >= 1 && input <= 42 && !found) {
+                    userInput[i] = input;
+                } else {
+                    i--;
+                    System.out.println("Het getal moet tussen de 1 en 42 zijn. ");
+                }
         }
 
         Arrays.sort(userInput);
