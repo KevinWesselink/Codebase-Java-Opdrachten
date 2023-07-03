@@ -16,7 +16,7 @@ public class Main {
             System.out.print("Geef lotto nummer " + lottoNumber + ": ");
             try {
                 input = Integer.parseInt(scanner.next());
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invoer moet een getal zijn.");
                 i--;
                 continue;
