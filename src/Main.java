@@ -9,9 +9,11 @@ public class Main {
         int[] computerInput = new int[6];
         int validation = 0;
         int input;
+        int lottoNumber = 1;
 
+        System.out.println("Getallen moeten tussen 1 en 42 zitten.");
         for (int i = 0; i < 6; i++) {
-            System.out.print("Geef een getal tussen de 1 en 42. ");
+            System.out.print("Geef lotto nummer " + lottoNumber + ": ");
             try {
                 input = Integer.parseInt(scanner.next());
             } catch (Exception e) {
@@ -35,6 +37,7 @@ public class Main {
                     i--;
                     System.out.println("Het getal moet tussen de 1 en 42 zijn. ");
                 }
+                lottoNumber++;
         }
 
         Arrays.sort(userInput);
